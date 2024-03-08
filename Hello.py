@@ -7,7 +7,7 @@ import requests
 def on_input_change():
     user_input = st.session_state.user_input
     st.session_state.past.append({'message': user_input, 'is_user': True})
-    url ='https://35ce-131-178-102-148.ngrok-free.app/database'
+    url ='https://3ce5-131-178-102-132.ngrok-free.app/database'
     question = {'Question' : user_input}
     headers = {'ngrok-skip-browser-warning': 'true', 'Content-Type': 'application/json'}
     response = requests.post(url, headers=headers, json=question)
