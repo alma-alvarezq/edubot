@@ -22,7 +22,7 @@ def on_btn_click():
     st.session_state.past.clear()
 
 st.session_state.setdefault(
-    'past',[]
+    'past',['Hello, my name is chatbot what are your queries']
 )
 
 st.session_state.setdefault(
