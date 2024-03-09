@@ -22,7 +22,7 @@ def on_btn_click():
     st.session_state.past.clear()
 
 st.session_state.setdefault(
-    'past',['Hello, my name is chatbot what are your queries']
+    'past',['Hello my name is chatbot, what are your queries?']
 )
 
 st.session_state.setdefault(
@@ -33,12 +33,15 @@ st.title("ChatBot")
 
 chat_placeholder = st.empty()
 
+index = 0
 for item in st.session_state.past:
     if isinstance(item, dict):
-        message(item['message'], is_user=item['is_user'])
+        message(item['message'], is_user=item['is_user'], key=f"{index}_user")
+        index = index + 1
 
 with st.container():
     st.text_input("User Input:", on_change=on_input_change, key="user_input")
 
 if st.button("Clear History"):
     on_btn_click()
+
